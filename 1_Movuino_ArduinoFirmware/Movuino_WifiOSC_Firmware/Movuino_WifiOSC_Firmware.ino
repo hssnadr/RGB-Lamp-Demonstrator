@@ -19,7 +19,7 @@
 const char * ssid = "Joel Chevrier Bonjour";       // your network SSID (name of the wifi network)
 const char * pass = "chevrier";                    // your network password
 const char * hostIP = "10.0.1.2";                  // IP address of the host computer
-unsigned int port = 2390;                          // port on which data are sent
+unsigned int port = 7400;                          // port on which data are sent
 
 MPU6050 accelgyro;
 ESP8266WiFiMulti WiFiMulti;
