@@ -1,4 +1,4 @@
-# Lampe RGB
+# RGB Lamp
 
 ## Presentation
 
@@ -49,7 +49,7 @@ Here you will find:
   * You can shut down (partially) and turn on the Movuino by pressing the button during 1 second.
   * **You can also send message to the Movuino, also using OSC.**
   
-### RGB Lamp firmware (2_CybRGB_ArduinoFirmware)
+### RGB Lamp firmware (2_CybRGB_ArduinoFirmware/)
 The lamp has been developped with an Arduino Leonardo and NeoPixel Led Strip from Adafruit. Here you will find some information concerning the Led Strip:
 * How to use it: https://learn.adafruit.com/adafruit-neopixel-uberguide/basic-connections
 * Concerning the batteries: https://learn.adafruit.com/adafruit-neopixel-uberguide/basic-connections
