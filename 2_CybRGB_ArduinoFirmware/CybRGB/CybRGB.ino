@@ -51,9 +51,11 @@ void loop() {
 
 int getTrueLedIndex(int ind_) {
   // REAL STRIP ORDER
+  // to be integrated properly into the lamp, the led strip has been cut and re-solder.
+  // I had to modify the order of the led to get the expected effect. This function permits to 
   //{1,2,3,4,5,6,7,8,10,9,11,12,13,15,14,16,17,18,22,21,20,19,23,29,28,27,26,25,24,30,31,33,32,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49}
-  //       |                        |                             |
-  //      red                     green                          blue
+  //       |                        |                             |                             |
+  //      red                     green                          blue                          end   
   //"RED" = 5 -> 13
   //"GREEN" = 15 -> 23
   //"BLUE" = 29 -> 34
