@@ -1,21 +1,17 @@
-# Movuino Wifi with OSC
+# Lampe RGB
 
 ## Presentation
 
-Movuino is a wireless sensor board. It includes an accelerometer, a gyroscope and a magnetometer.  
-Here is a code template to stream those data from the board to your computer using Wifi, and then to stream them to any application using Open Sound Control:
-* Presentation:  http://opensoundcontrol.org/
-* Reference: http://opensoundcontrol.org/spec-1_0
+This lamp project is a demonstrator dedicated to highlight Mobile-Lab technological ressources. It allows to interact with its colors by moving the hand. How does it works ?
+ 1. the user record 3 gestures, each one corresponding to a color component of the light (red, green or blue);
+ 2. then he moves is hand reproducing those gestures, this way he can regulate the proportion of RGB colors in the light and create any kind of colors;
+ 3. the user can record any kind of gesture, let's try different patterns!
 
 ## Content
 Here you will find:
 * **1_Movuino_FirmwareOSC/Arduino** this folder contains the firmware for the Movuino. You can edit and use it with the Arduino software;
-* **2_MovuinoDesktop_OSC** this one contains template to receive the data from Movuino on various application:
- * Python
- * Max/MSP
- * Processing
- * Unity
- * to be continued...
+* **2_CybRGB_ArduinoFirmware** this folder contains the firmware of the lamp. You can also edit it using the Arduino software;
+* **CybRGB.maxpat** this file is used as interface to control the lamp.
 
 ## Installation
   
