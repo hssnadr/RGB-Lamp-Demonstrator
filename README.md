@@ -7,6 +7,12 @@ This lamp project is a demonstrator dedicated to highlight Mobile-Lab technologi
  2. then he moves is hand reproducing those gestures, this way he can regulate the proportion of RGB colors in the light and create any kind of colors;
  3. the user can record any kind of gesture, let's try different patterns!
 
+The purpose of this project is to highlight usages around those technologies and enhance collaboration with potential development partners.
+
+This demonstrator was developed using **Movuino** gesture sensor and **IRCAM** algorithm libraries for real time gesture recognition. This library is include into their MuBu package for Max/MSP. It gives Max objects to easily store and manage data flows.
+* Presentation: https://www.julesfrancoise.com/mubu-probabilistic-models/
+* Download link: http://forumnet.ircam.fr/fr/produit/mubu/
+
 ## Content
 Here you will find:
 * **1_Movuino_FirmwareOSC/Arduino** this folder contains the firmware for the Movuino. You can edit and use it with the Arduino software;
@@ -44,28 +50,19 @@ Here you will find:
   * **You can also send message to the Movuino, also using OSC.**
   
 ### Movuino desktop application (2_MovuinoDesktop_OSC/)
-#### MAX/MSP
-Once Movuino is launch and properly connected, you don't have anything to do more than open the Max file `MovuinoOSC_to MaxMSP.maxpat`
 
-#### PureData
-Same than Max/MSP with file `MovuinoOSC_to_PureData.pd`
+### CybRGB.maxpat
+To run the Max file, you'll need to install the MuBu package. It's very simple!
+* download the package on the MuBu page: http://forumnet.ircam.fr/fr/produit/mubu/
+* unzip the folder "MuBuForMax" and simply past it into the proper folder:
+ * **On Macintosh**
+    * go to Applications folder, right click on the **Max** icon and choose "Show Package Contents"
+    * paste the MuBuForMax folder into Contents/Resources/C74/packages
+    * launch or restart Max and that's it.
+  * **On Windows**
+    * go to your installation folder (e.g.)
+    * **to complete**  
+    
+Before to use the script you will also need to make the lamp recognized by the Max patch. Once again it's very simple, you simply need plug the lamp to your computer, then print the available USB port of your computer, check which one correspond  to the lamp and finally set this port into the Max patch. Here the principle (not the same patch but exactly the same workflow):
 
-#### Python
-##### Installation needed
-* Python 2.7
-* Python libraries:
-  * Numpy: easiest way with command line `sudo pip install numpy`
-    * This library allows better data manipulation, especially using matrix and vectors
-  * pyOSC
-    * Dl link: https://pypi.python.org/pypi/pyOSC
-    * Reference: https://wiki.labomedia.org/index.php/Envoyer_et_recevoir_de_l%27OSC_en_python#Reception_d.27un_message_avec_un_serveur
-Go into the Main.py file and `main()` function of each script to see how to interact with the code.  
-
-##### Note
-* the pyOSC library returns an error when you close the server thread (`self.s.close()`). This error is not really a problem since 
-the thread is actually closed once called. If you know how to handle it please tell me cause I don't know when I will check that.
-
-#### Processing
-* Install Processing: https://processing.org/download/
-* Install oscP5 libraries: into Processing go to Sketch/Include Library/Manage Libraries.. seek and install "oscP5"
-* Enjoy your life like never before
+![alt tag](https://raw.githubusercontent.com/hssnadr/Arduino_Templates/master/Serial_MaxMSP_to_Arduino/Max_DefinePort.JPG)  
