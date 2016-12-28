@@ -49,8 +49,17 @@ Here you will find:
   * You can shut down (partially) and turn on the Movuino by pressing the button during 1 second.
   * **You can also send message to the Movuino, also using OSC.**
   
-### Movuino desktop application (2_MovuinoDesktop_OSC/)
+### RGB Lamp firmware (2_CybRGB_ArduinoFirmware)
+The lamp has been developped with an Arduino Leonardo and NeoPixel Led Strip from Adafruit. Here you will find some information concerning the Led Strip:
+* How to use it: https://learn.adafruit.com/adafruit-neopixel-uberguide/basic-connections
+* Concerning the batteries: https://learn.adafruit.com/adafruit-neopixel-uberguide/basic-connections
 
+To use it you only need to plug the USB port to your computer, to plug the power supply and to directly go next step with the Max/MSP patch.
+  
+To modify the firmware, download the content of the folder and paste it into your Arduino folder (Macintosh and Windows: Documents/Arduino). The folder include the NeoPixel library but I recommend you to download it yourself: in the Arduino software go to "Sketch/Include Library/Manage Libraries...", here seek and install "Adafruit NeoPixel".
+  
+Now you can play with the code and update the firmware. Be sure to choose "Arduino Leonardo" (Tools/Board/) before to upload the code.
+  
 ### CybRGB.maxpat
 To run the Max file, you'll need to install the MuBu package. It's very simple!
 * download the package on the MuBu page: http://forumnet.ircam.fr/fr/produit/mubu/
