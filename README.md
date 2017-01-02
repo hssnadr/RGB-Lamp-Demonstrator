@@ -11,6 +11,7 @@ This lamp project is a demonstrator dedicated to highlight Mobile-Lab technologi
 
 Full presentation video on Vimeo: https://vimeo.com/197767041
 
+![alt tag](https://raw.githubusercontent.com/hssnadr/RGB-Lamp-Demonstrator/master/images/RGBLamp_animation.gif)  
 ![alt tag](https://raw.githubusercontent.com/hssnadr/RGB-Lamp-Demonstrator/master/images/01.jpg)  
 ![alt tag](https://raw.githubusercontent.com/hssnadr/RGB-Lamp-Demonstrator/master/images/02.jpg)  
 ![alt tag](https://raw.githubusercontent.com/hssnadr/RGB-Lamp-Demonstrator/master/images/05.jpg)
