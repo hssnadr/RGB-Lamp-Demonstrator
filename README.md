@@ -77,8 +77,8 @@ To run the Max file, you'll need to install the MuBu package. It's very simple!
     * paste the MuBuForMax folder into Contents/Resources/C74/packages
     * launch or restart Max and that's it.
   * **On Windows**
-    * go to your installation folder (e.g.)
-    * **to complete**  
+    * paste the MuBuForMax folder into C:\Program Files\Cycling '74\Max 7\resources\packages
+    * launch or restart Max and that's it.
     
 Before to use the script you will also need to make the lamp recognized by the Max patch. Once again it's very simple, you simply need plug the lamp to your computer, then print the available USB port of your computer, check which one correspond  to the lamp and finally set this port into the Max patch. Here the principle (not the same patch but exactly the same workflow):
 
