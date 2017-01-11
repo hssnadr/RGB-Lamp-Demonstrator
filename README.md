@@ -18,7 +18,7 @@ Full presentation video on Vimeo: https://vimeo.com/197767041
 
 The purpose of this project is to highlight usages around those technologies and enhance collaboration with potential development partners.
 
-This demonstrator was developed using **Movuino** gesture sensor and **IRCAM** algorithm libraries for real time gesture recognition. This library is include into their MuBu package for Max/MSP. It gives Max objects to easily store and manage data flows.
+This demonstrator was developed using **Movuino** gesture sensor and **IRCAM** algorithm libraries for real time gesture recognition. This library is include into their MuBu package for Max/MSP. It gives Max objects to easily store and manage data flows and includes their XMM libraries.
 * Presentation: https://www.julesfrancoise.com/mubu-probabilistic-models/
 * Download link: http://forumnet.ircam.fr/fr/produit/mubu/
 
