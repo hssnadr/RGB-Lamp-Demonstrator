@@ -4,7 +4,7 @@
 
 ## Presentation
 
-This lamp project is a demonstrator dedicated to highlight Mobile-Lab technological ressources. It allows to interact with its colors by moving the hand. How does it work ?
+This lamp project is a demonstrator dedicated to highlight Mobile-Lab technological resources. It allows to interact with its colors by moving the hand. How does it work ?
  1. the user records 3 gestures, each one corresponding to a color component of the light (red, green or blue);
  2. then he moves his hand reproducing those gestures, this way he can regulate the proportion of RGB colors in the light and create any kind of colors;
  3. the user can record any kind of gesture, let's try different patterns!
