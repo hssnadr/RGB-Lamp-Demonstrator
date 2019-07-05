@@ -13,7 +13,7 @@ void getSerialMsg() {
       if (buffer[index] != -1) {
         index++; // -1 if no byte is present
       }
-    } while (buffer[index - 1] != 32); //keep collecting bytes until a space is received
+    } while (buffer[index - 1] != 95); //keep collecting bytes until '_' is received
 
     msgVal = atoi(buffer);       // interpret buffer string as an integer and get the value corresponding to the address
     updateValues(); // this function is placed here for the example but it's up to you

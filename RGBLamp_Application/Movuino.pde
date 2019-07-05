@@ -23,8 +23,8 @@ public class Movuino implements Runnable {
   // OSC communication parameters
   OscP5 oscP5Movuino;
   NetAddress myMovuinoLocation;
-  int portIn = 3010;
-  int portOut = 3011;
+  int portIn = 7400;
+  int portOut = 7401;
   String ip;
 
   String device;  // type of device (smartphone or movuino)
@@ -46,6 +46,7 @@ public class Movuino implements Runnable {
   int red = 255;   // red component for neopixel color
   int green = 255; // green component for neopixel color
   int blue = 255;  // blue component for neopixel color
+  private int brightness = 255;
 
   public Movuino(String ip_, int portin_, int portout_) {
     this.ip = ip_;
@@ -83,6 +84,10 @@ public class Movuino implements Runnable {
     thread = null;
   }
 
+  //-----------------------------
+  //--------- DATA PRINT --------
+  //-----------------------------
+
   void printInfo() {
     println("Device:", movuino.device);
     println("ID:", movuino.id);
@@ -106,39 +111,57 @@ public class Movuino implements Runnable {
     }
   }
 
-  void sendToMovuino(String addr_, String mess_) {
-    // Send messages to Movuino through OSC protocol
-    OscMessage myOscMessage = new OscMessage("/" + addr_); // create a new OscMessage with an address pattern
-    myOscMessage.add(mess_); // add a value to the OscMessage
-    oscP5Movuino.send(myOscMessage, myMovuinoLocation); // send the OscMessage to a remote location specified in myNetAddress
-  }
-  
-  void lightNow(boolean isLit_){
-    if(isLit_){
-      
+  //-----------------------------
+  //---------- NEOPIXEL ---------
+  //-----------------------------
+
+  void lightNow(boolean isLit_) {
+    // Switch ON/OFF the light
+    if (isLit_) {
+      this.setNeopix(this.red, this.green, this.blue); // turn on to previous light color
+    } else {
+      this.setNeopix(0);                               // turn off
     }
   }
-  
-  void setNeopix(color color_){
+
+  void setBrightness(int bright_) {
+    this.brightness = constrain(bright_, 0, 255);     // set new brightness
+    this.setNeopix(this.red, this.green, this.blue);  // send to Movuino
+  }
+
+  void setNeopix(color color_) {
     setNeopix(red(color_), green(color_), blue(color_));
   }
-  
-  void setNeopix(float red_, float green_, float blue_){
+
+  void setNeopix(float greyShade_) {
+    greyShade_ = constrain(greyShade_, 0, 255);
+    setNeopix(greyShade_, greyShade_, greyShade_);
+  }
+
+  void setNeopix(float red_, float green_, float blue_) {
     OscMessage myOscMessage = new OscMessage("/neopix"); // create a new OscMessage with an address pattern
-    
-    // Store new color values
-    red = int(red_);
-    green = int(green_);
-    blue = int(blue_);
-    
+
+    float bright_ = map(this.brightness, 0, 255, 255, 1);
+
     // Add new color values to message
-    myOscMessage.add(red);
-    myOscMessage.add(green);
-    myOscMessage.add(blue);
-    
+    myOscMessage.add(int(red_/bright_));
+    myOscMessage.add(int(green_/bright_));
+    myOscMessage.add(int(blue_/bright_));
+
     // Send message
     oscP5Movuino.send(myOscMessage, myMovuinoLocation); // send the OscMessage to a remote location specified in myNetAddress
+
+    // Store new color values
+    if (red_ > 0 && green_ > 0 && blue_ > 0) {
+      red = int(red_);
+      green = int(green_);
+      blue = int(blue_);
+    }
   }
+
+  //-----------------------------
+  //---------- VIBRATOR ---------
+  //-----------------------------
 
   void vibroNow(boolean isVibro_) {
     OscMessage myOscMessage = new OscMessage("/vibroNow"); // create a new OscMessage with an address pattern
@@ -151,6 +174,17 @@ public class Movuino implements Runnable {
     myOscMessage.add(on_);   // add active time to osc message
     myOscMessage.add(off_);  // add inactive time to osc message
     myOscMessage.add(n_);    // add number of repetitions to the osc message
+    oscP5Movuino.send(myOscMessage, myMovuinoLocation); // send the OscMessage to a remote location specified in myNetAddress
+  }
+
+  //-----------------------------
+  //----- OSC COMMUNICATION -----
+  //-----------------------------
+
+  void sendToMovuino(String addr_, String mess_) {
+    // Send messages to Movuino through OSC protocol
+    OscMessage myOscMessage = new OscMessage("/" + addr_); // create a new OscMessage with an address pattern
+    myOscMessage.add(mess_); // add a value to the OscMessage
     oscP5Movuino.send(myOscMessage, myMovuinoLocation); // send the OscMessage to a remote location specified in myNetAddress
   }
 
@@ -197,8 +231,6 @@ public class Movuino implements Runnable {
         default:
           break;
         }
-
-
         return;
       }
     }
