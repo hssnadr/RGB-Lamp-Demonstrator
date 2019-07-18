@@ -34,7 +34,7 @@ void setup() {
   // set application window
   size(700, 500);
 
-  // Set serial communication with the RGB Lamp
+  // Set serial communication with the RGB Lamp 
   println(Serial.list());
   if (Serial.list().length > 0) {
     String portName = Serial.list()[0];
