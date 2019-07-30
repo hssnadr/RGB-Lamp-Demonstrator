@@ -1,3 +1,9 @@
+/*
+ * This project is part of the Movuino demo tutorial from: http://www.movuino.com/
+ * Page of the project: http://www.movuino.com/index.php/portfolio/rgb-lamp/
+ * Github: https://github.com/hssnadr/RGB-Lamp-Demonstrator
+ */
+
 //LED strip
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
