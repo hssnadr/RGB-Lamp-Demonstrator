@@ -1,6 +1,7 @@
 /*
- * This example is based on the UsingGeomerative example of the Generative Typography example
- * Here is the link of the original source: https://github.com/AmnonOwed/CAN_GenerativeTypography
+ * This project is part of the Movuino demo tutorial from: http://www.movuino.com/
+ * Page of the project: http://www.movuino.com/index.php/portfolio/rgb-lamp/
+ * Github: https://github.com/hssnadr/RGB-Lamp-Demonstrator
  */
 
 import processing.serial.*;     // library to communicate with Arduino through serial (USB port)
