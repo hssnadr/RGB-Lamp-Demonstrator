@@ -33,14 +33,17 @@ void updateValues() {
   // the address is used to route the message value
   switch (msgAdr) {
     case 'r':
+      stopAutoLoop();
       r = constrain(msgVal, 0, 255);
       isNewColor = true;
       break;
     case 'g':
+      stopAutoLoop();
       g = constrain(msgVal, 0, 255);
       isNewColor = true;
       break;
     case 'b':
+      stopAutoLoop();
       b = constrain(msgVal, 0, 255);
       isNewColor = true;
       break;
